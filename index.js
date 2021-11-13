@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 require("dotenv").config();
 const ObjectId = require("mongodb").ObjectId;
 
-const serviceAccount = require("./amazing-car-firebase-adminsdk.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
